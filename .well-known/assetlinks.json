@@ -3,6 +3,6 @@
       "target": {
         "namespace": "android_app",
         "package_name": "io.github.alvlas5.twa",
-        "sha256_cert_fingerprints": ["0F:E0:9B:54:51:77:F9:6A:66:FE:55:B9:3D:10:12:79:45:F2:AB:22:EB:12:96:56:52:11:75:41:5C:45:D1:58"]
+        "sha256_cert_fingerprints": ["0D:80:16:2C:8E:D6:82:A1:D6:22:95:03:01:F9:E1:86:4B:59:BD:D8:92:4B:FE:D9:C4:CD:B1:4B:A9:B3:09:D4"]
       }
     }]
