@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Мониторинг объектов</title>
+<meta name="description" content="Мониторинг объектов электроснабжения БС — карта и поиск">
+<meta name="theme-color" content="#0B2545">
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Мониторинг БС">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="header__top">
+      <div class="brand">
+        <div class="brand__mark">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="#0B2545"/></svg>
+        </div>
+        <div>
+          <div class="brand__text">Мониторинг объектов</div>
+          <div class="brand__sub">Электроснабжение БС</div>
+        </div>
+      </div>
+      <div class="status-pill" id="statusPill">
+        <span class="status-dot"></span>
+        <span class="status-text">Онлайн</span>
+      </div>
+    </div>
+
+    <div class="search-bar" id="searchBar">
+      <svg class="icon-search" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <input id="searchInput" type="text" inputmode="search" autocomplete="off" placeholder="Номер БС или адрес…">
+      <button class="search-clear" id="searchClear" aria-label="Очистить">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Toolbar ===== -->
+  <div class="toolbar">
+    <button class="btn-map" id="btnMap">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 4L3 6.5v14L9 18m0-14l6 2m-6-2v14m6-12l6-2.5v14L15 18m0-14v14" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <span class="btn-map__label">Показать карту</span>
+    </button>
+    <div class="count-chip" id="countChip">
+      <span class="n">0</span>&nbsp;объектов
+    </div>
+  </div>
+
+  <!-- ===== Map panel ===== -->
+  <div class="map-panel" id="mapPanel">
+    <div id="map"></div>
+  </div>
+
+  <!-- ===== List ===== -->
+  <main class="list-wrap">
+    <div class="list-label">Список объектов</div>
+    <div id="list"></div>
+    <div class="empty-state" id="emptyState" style="display:none">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <p>Ничего не найдено</p>
+    </div>
+  </main>
+
+  <!-- ===== Install banner ===== -->
+  <div class="install-banner" id="installBanner">
+    <span>Установите приложение на телефон</span>
+    <button id="installBtn">Установить</button>
+    <button class="dismiss" id="installDismiss">✕</button>
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
